@@ -4,25 +4,14 @@ from rest_framework.decorators import api_view,permission_classes
 from rest_framework import permissions
 from rest_framework.response import Response
 import json
-from .models import Options,Topics,MCQ
+from .models import Topics,MCQ
 from django.db import DatabaseError, transaction
-from .serializers import TopicSerializer,MCQSerializer,OptionsSerializer
+from .serializers import TopicSerializer,MCQSerializer
 # Create your views here.
 
 
 def welcome(request):
     return JsonResponse({'status':'Working..'})
-
-
-@api_view(['GET'])
-@permission_classes((permissions.AllowAny,))
-def help(request):
-    u={
-        'all_topics':'/all-topics/',
-    }
-
-
-    return Response(u)
 
 
 

@@ -4,6 +4,5 @@ from .models import *
 
 admin.site.register(Topics)
 admin.site.register(MCQ)
-admin.site.register(Options)
 
 

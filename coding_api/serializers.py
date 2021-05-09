@@ -1,4 +1,4 @@
-from .models import Topics,MCQ,Options
+from .models import Topics,MCQ
 from rest_framework import serializers
 
 
@@ -8,17 +8,7 @@ class TopicSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-
-class OptionsSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Options
-        fields = ['A','B','C','D']
-
-
 class MCQSerializer(serializers.ModelSerializer):
-
-    options = OptionsSerializer(many=True,read_only=True)
 
     class Meta:
         model = MCQ
